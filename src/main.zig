@@ -10,14 +10,14 @@ pub fn main() !void {
     game_loop: while (true) {
         zinput.update();
 
-        for (zinput.getKeys()) |key| {
-            switch (key) {
-                zinput.keys.ESCAPE => break :game_loop,
-                zinput.keys.a => std.debug.print("xxxxx", .{}),
-                zinput.keys.s => std.debug.print("ddddd", .{}),
-                else => {}
-            }
-        }
+        for (zinput.getKeys()) |key| switch (key) {
+            zinput.keys.ESCAPE => break :game_loop,
+            zinput.keys.a => std.debug.print("a", .{}),
+            zinput.keys.d => std.debug.print("d", .{}),
+            zinput.keys.w => std.debug.print("w", .{}),
+            zinput.keys.s => std.debug.print("s", .{}),
+            else => {},
+        };
     }
 
     zinput.deinit();
