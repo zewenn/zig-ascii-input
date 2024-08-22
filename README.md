@@ -1,3 +1,6 @@
+> [!CAUTION]
+> This library is **DEPRECATED** and will not be supported further.
+
 # Zig Termnal Input Library
 > [!WARNING]
 > This library currently only supports Linux and MacOS

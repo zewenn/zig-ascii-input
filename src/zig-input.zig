@@ -53,6 +53,18 @@ pub const zinput = struct {
     var alloc: *Allocator = undefined;
     var terminal: Terminal = undefined;
 
+    pub const debug = struct {
+        pub fn printBuf() void {
+            std.debug.print("|", .{});
+            for (buffer) |key| {
+                if (key < 47 or key > 127) continue;
+                std.debug.print("{c} ", .{key});
+            }
+            std.debug.print("|\n\r", .{});
+        }
+    };
+
+    /// Set up. Terminal WILL BE SET TO RAW MODE!
     pub fn init(allocator: *Allocator) !void {
         read_file = io.getStdIn();
         io_reader = read_file.reader();

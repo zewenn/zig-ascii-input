@@ -12,12 +12,9 @@ pub fn main() !void {
 
         for (zinput.getKeys()) |key| switch (key) {
             zinput.keys.ESCAPE => break :game_loop,
-            zinput.keys.a => std.debug.print("a", .{}),
-            zinput.keys.d => std.debug.print("d", .{}),
-            zinput.keys.w => std.debug.print("w", .{}),
-            zinput.keys.s => std.debug.print("s", .{}),
             else => {},
         };
+        zinput.debug.printBuf();
     }
 
     zinput.deinit();
